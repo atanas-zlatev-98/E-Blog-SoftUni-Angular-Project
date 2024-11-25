@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TrendingNowComponent } from "./trending-now/trending-now.component";
 import { TechnologyComponent } from "./technology/technology.component";
+import { ArtificialComponent } from "./artificial/artificial.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, TrendingNowComponent, TechnologyComponent],
+  imports: [RouterLink, TrendingNowComponent, TechnologyComponent, ArtificialComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

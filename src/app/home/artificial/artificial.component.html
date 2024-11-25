@@ -1,0 +1,18 @@
+<div class="ai-section">
+    <div class="ai-header">
+        <div class="ai-side-header">
+            <h2>Artificial Intelligence</h2>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="ai">
+        <div class="top-3-ai">
+            @for (post of dummy_posts; track $index) {
+                <app-ai-template [post]="post"/>
+            }
+        </div>
+        <div class="popular-post">
+            <h3>Popular Posts</h3>
+        </div>
+    </div>
+</div>
