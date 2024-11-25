@@ -3,5 +3,8 @@ export interface Posts {
     imageUrl: string;
     title:string;
     createdAt:string;
-    createdBy: string
+    createdBy: string,
+    trend: string,
+    readTime:string;
+    likes: number;
 }

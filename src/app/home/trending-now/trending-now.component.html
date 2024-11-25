@@ -1,8 +1,10 @@
 <div class="trending-now">
     <h2>Trending Now</h2>
-    <div class="trending">
-        @for(post of dummy_posts; track $index){
-            <app-template class="temp" [post]="post"/>
-        }
+    <div class="center">
+        <div class="trending">
+            @for(post of dummy_posts; track $index){
+            <app-template class="temp" [post]="post" />
+            }
+        </div>
     </div>
 </div>

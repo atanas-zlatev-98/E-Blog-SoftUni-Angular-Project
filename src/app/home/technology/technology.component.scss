@@ -1,0 +1,175 @@
+.tech-container {
+    width: 100%;
+    height: 500px;
+    // background: red;
+    display: flex;
+    justify-content: center;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+.tech {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    // background: rebeccapurple;
+}
+
+.technology-side {
+    width: 1050px;
+}
+.technology-side-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.technology-side-header > h2 {
+    padding-right: 50px;
+    font-size: 2.3rem;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #f6f6f6;
+}
+
+.feature-post {
+    width: 250px;
+    padding-left: 20px;
+}
+
+.feature-post-header > h3 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 50px;
+    margin-bottom: 30px;
+    
+}
+
+.technology-content {
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+
+.technology-content-main {
+    // background-color: red;
+    width: 550px;
+    height: 400px;
+    // padding-right: 10px;
+}
+
+.technology-content-side {
+    // background-color: green;
+    width:400px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.overflow {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.overflow > img {
+    width: 100%;
+    height: 400px;
+}
+
+.tech-main-link {
+position: relative;
+display: flex;
+flex-direction: column;
+
+    &:hover {
+        .main-img {
+            transform: scale(1.03);
+            transition: 0.5s;
+        }
+        .tech-main-link-text > h3  {
+           text-decoration: underline;
+        }
+    }
+}
+
+.tech-main-link-trend {
+    // width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center; 
+    padding: 20px 0px 20px 20px;
+    
+}
+
+.tech-main-link-trend >h3{
+    background: white;
+    color: black;
+    padding: 5px 20px;
+}
+.tech-main-link-text {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
+.tech-main-link-text > div {
+    display: flex;
+    gap: 15px;
+    color: white;
+}
+.tech-main-link-text >h3  {
+    color: white;
+}
+.tech-main-link-text > div >p  {
+    color: white;
+}
+
+.ft-post {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &:hover {
+        .feature-post-title > p {
+            text-decoration: underline;
+        }
+    }
+}
+.overflow-feature-post {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.overflow-feature-post > img {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    height: 300px;
+    object-fit: cover;
+}
+.feature-post-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.feature-post-title > p {
+    text-align: center;
+     font-weight: bold;
+}
+.feature-post-title > div {
+    display: flex;
+    gap: 15px;
+}

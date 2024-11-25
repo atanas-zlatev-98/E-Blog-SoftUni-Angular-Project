@@ -1,0 +1,54 @@
+.single-tech-posts {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    cursor: pointer;
+
+    &:hover {
+        .single-img {
+            transform: scale(1.03);
+            transition: 0.5s;
+        }
+
+        .single-tech-posts-title {
+            text-decoration: underline;
+        }
+    }
+}
+
+.single-post-img {
+    overflow: hidden;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    align-items: center;
+}
+
+.single-img {
+    width: 200px;
+    height: 100%;
+}
+
+.single-tech-posts-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.single-tech-posts-text>div {
+    display: flex;
+    gap: 15px;
+}
+
+.single-tech-posts-trend {
+    background: #f6f6f6;
+    width: fit-content;
+    padding: 5px 15px;
+    display: flex;
+    color: black;
+}
+
+.single-tech-posts-title {
+    font-weight: bold;
+}

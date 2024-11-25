@@ -1,0 +1,55 @@
+<div class="tech-container">
+    <div class="tech">
+        <div class="technology-side">
+            <div class="technology-side-header">
+                <h2>Technology</h2>
+                <div class="line"></div>
+            </div>
+            <div class="technology-content">
+                <div class="technology-content-main">
+                    <a routerLink="#" class="tech-main-link">
+                        <div class="overflow">
+                            <img class="main-img" [attr.src]="imgUrlMain" />
+                        </div>
+                        <div class="tech-main-link-trend">
+                            <h3 routerLink="/login">Trend</h3>
+                        </div>
+                        <div class="tech-main-link-text">
+                            <h3>Cloud journeys: Jeff Barr on
+                                inspiring cloud industry leaders</h3>
+                            <div>
+                                <p>By Elon Musk</p>
+                                <p>3 Minute Read</p>
+                                <p>Likes 45</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="technology-content-side">
+                    @for (post of dummy_posts; track $index) {
+                        <app-tech-section-content  [post]="post"/>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="feature-post">
+            <div class="feature-post-header">
+                <h3>Feature Post</h3>
+
+                <div class="ft-post">
+                    <div class="overflow-feature-post">
+                        <img [attr.src]="imgUrlMain" alt="asd"/>
+                    </div>
+                    <div class="feature-post-title">
+                        <div>
+                            <p>3 Minute Read</p>
+                            <p>Likes 45</p>
+                        </div>
+                        <p>Efficient Rules to Organize Your Working Relationship</p>
+                        <p>By Elon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class NavigationBarComponent {
   isLoggedIn: boolean = true;
-  shown: boolean = true;
+  shown: boolean = false;
   
 
   clickEvent() {
