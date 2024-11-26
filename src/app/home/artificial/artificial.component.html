@@ -6,13 +6,25 @@
         </div>
     </div>
     <div class="ai">
-        <div class="top-3-ai">
-            @for (post of dummy_posts; track $index) {
-                <app-ai-template [post]="post"/>
-            }
+        <div>
+            <div class="top-3-ai">
+                @for (post of dummy_posts; track $index) {
+                <app-ai-template [post]="post" />
+                }
+            </div>
+            <div class="top-3-below">
+                @for (post of dummy_posts_below; track $index) {
+                    <app-ai-template-below [post]="post" />
+                    }
+            </div>
         </div>
         <div class="popular-post">
-            <h3>Popular Posts</h3>
+            <h3>Browse Category</h3>
+            <div class="">
+                <h3>Artificial Intelligence</h3>
+                <h3>Technology</h3>
+                <h3>Crypto</h3>
+            </div>
         </div>
     </div>
 </div>

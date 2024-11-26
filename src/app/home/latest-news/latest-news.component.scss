@@ -1,0 +1,39 @@
+.latest-news-container {
+    width: 100%;
+    // height: 500px;
+    // background: red;
+    display: flex;
+    justify-content: center;
+    font-family: "Chakra Petch", sans-serif;
+    margin-bottom: 50px;
+}
+.latest-news {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+.latest-news-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.latest-news-header > h2 {
+    width: 350px;
+    padding-right: 50px;
+    font-size: 2.3rem;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #f6f6f6;
+}
+.latest-news-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

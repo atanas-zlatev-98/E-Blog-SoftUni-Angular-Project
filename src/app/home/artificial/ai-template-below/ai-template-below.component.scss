@@ -1,0 +1,37 @@
+.single-below {
+    display: flex;
+    gap: 15px;
+    width: 450px;
+    cursor: pointer;
+    &:hover {
+        .single-below-title {
+            text-decoration: underline;
+        }
+    }
+}
+.single-below-title {
+    font-weight: bold;
+}
+
+.below-img {
+    width: 150px;
+    height: 100%;
+}
+.single-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.single-time-likes {
+    display: flex;
+    gap: 20px;
+}
+
+.single-below-trend {
+    background: #f6f6f6;
+    width: fit-content;
+    padding: 5px 15px;
+    display: flex;
+    color: black;
+}
