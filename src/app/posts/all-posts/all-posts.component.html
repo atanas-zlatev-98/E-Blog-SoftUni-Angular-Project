@@ -1,0 +1,14 @@
+<div class="all-posts">
+    <div class="post-container">
+        <div class="post-container-header">
+            <h1>Recent Posts</h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="posts">
+            @for (post of dummy_posts; track $index) {
+                <app-post-details [post]="post"/>
+            }
+        </div>
+    </div>
+</div>
