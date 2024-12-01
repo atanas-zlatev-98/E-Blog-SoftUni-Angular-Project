@@ -58,7 +58,24 @@ fieldset > h2 {
     padding: 10px;
     font-size: 18px;
 }
-
+.field-group>textarea {
+    padding: 10px;
+    font-size: 18px;
+}
+.groups{
+    display: flex;
+    gap: 20px;
+}
+.group-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.group-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .register-btn-cont {
     margin-bottom: 15px;
 }

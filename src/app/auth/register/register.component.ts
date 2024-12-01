@@ -25,8 +25,8 @@ export class RegisterComponent {
 
     console.log(form.value);
 
-    const {imgUrl, username, email, tel,password } = form.value;
-    this.userService.register(imgUrl!,username!,email!,tel!,password!).subscribe(()=>{
+    const {imgUrl, username, email,userSummary,password } = form.value;
+    this.userService.register(imgUrl!,username!,email!,userSummary!,password!).subscribe(()=>{
       this.router.navigate(['/home']);
     });
   }

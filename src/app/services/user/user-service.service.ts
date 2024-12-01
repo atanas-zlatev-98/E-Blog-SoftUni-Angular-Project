@@ -33,10 +33,10 @@ export class UserService{
 
   }
 
-  register(imgUrl:string,username: string, email: string, tel: string, password: string) {
+  register(imgUrl:string,username: string, email: string, userSummary: string, password: string) {
 
     return this.http
-      .post<AuthUserInterface>('/api/register', { imgUrl,username, email, password})
+      .post<AuthUserInterface>('/api/register', { imgUrl,username, email,userSummary, password})
       .pipe(tap(user => this.user$$.next(user)));
 
   }

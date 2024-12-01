@@ -16,9 +16,9 @@
                     <img (click)="clickEvent()" class="nav-profile-pic" src={{userProfileImg}}  alt="profile-pic"/>
                     <div [ngClass]="shown ? 'show-menu' : 'hide-menu'">
                         <ul class="ul-shown-menu">
-                            <li routerLink="#">Profile</li>
-                            <li routerLink="#">Create Post</li>
-                            <li routerLink="#">My Posts</li>
+                            <li (click)="clickEvent()" routerLink="profile">Profile</li>
+                            <li (click)="clickEvent()" routerLink="#">Create Post</li>
+                            <li (click)="clickEvent()" routerLink="#">My Posts</li>
                             <li (click)="logout()">Log Out</li>
                         </ul>
                     </div>
