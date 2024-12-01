@@ -13,13 +13,13 @@
             @if(isLoggedIn){
             <div class="nav-logged">
                 <div >
-                    <img (click)="clickEvent()" class="nav-profile-pic" src="https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-in-the-style-of-2d-game-art-image_2884743.jpg"  alt="profile-pic"/>
+                    <img (click)="clickEvent()" class="nav-profile-pic" src={{userProfileImg}}  alt="profile-pic"/>
                     <div [ngClass]="shown ? 'show-menu' : 'hide-menu'">
                         <ul class="ul-shown-menu">
                             <li routerLink="#">Profile</li>
                             <li routerLink="#">Create Post</li>
                             <li routerLink="#">My Posts</li>
-                            <li routerLink="#">Log Out</li>
+                            <li (click)="logout()">Log Out</li>
                         </ul>
                     </div>
                 </div>

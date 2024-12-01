@@ -1,0 +1,73 @@
+.register-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+.register-form-container {
+    max-width: 1200px;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.register {
+    margin-top: 100px;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 5px;
+}
+fieldset > h2 {
+    margin-bottom: 15px;
+}
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.register-btn {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #00c89a;
+    width: fit-content;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.label-register {
+    margin-bottom: 10px;
+}
+
+.field-group>input {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.register-btn-cont {
+    margin-bottom: 15px;
+}
+
+.text-center>a>span {
+    color: #00c89a;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

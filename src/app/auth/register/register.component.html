@@ -1,1 +1,50 @@
-<p>register works!</p>
+<div class="register-container">
+    <div class="register-form-container">
+        <form class="register" #form="ngForm" (ngSubmit)="register(form)">
+            <fieldset>
+                <h2>Register.</h2>
+
+                <div class="field-group">
+                    <label class="label-register" for="imgUrl">Profile Picture URL: </label>
+                    <input type="text" name="imgUrl" id="imgUrl" placeholder="Profile Image link..." ngModel
+                        #inputImgUrl="ngModel" required />
+                </div>
+                <div class="field-group">
+                    <label class="label-register" for="username">Username:</label>
+                    <input type="text" name="username" id="username" placeholder="exp. John" ngModel
+                        #inputUsername="ngModel" required />
+                </div>
+                <div class="field-group">
+                    <label class="label-register" for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" ngModel
+                        #inputEmail="ngModel" required />
+                </div>
+
+                <div class="field-group">
+                    <label class="label-login" for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="******" ngModel
+                        #inputPassword="ngModel" minlength="5" required />
+                </div>
+
+                <div class="field-group">
+                    <label class="label-login" for="rePassword">Repeat Password</label>
+                    <input type="password" name="rePass" id="rePass" placeholder="******" ngModel
+                        #inputPassword="ngModel" minlength="5" required />
+                </div>
+
+                <div class="register-btn-cont">
+
+                    <button class="register-btn">
+                        Register
+                    </button>
+
+                </div>
+
+                <p class="text-center">
+                    Have an account?
+                    <a routerLink="/login"><span>Login</span></a>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</div>
