@@ -1,19 +1,37 @@
 <div class="login-container">
     <div class="login-form-container">
-        <form class="login" #form="ngForm" (ngSubmit)="login(form)">
+        <form class="login" [formGroup]="formLogin" (ngSubmit)="login()">
             <fieldset>
                 <h2>Sign in to your account</h2>
 
                 <div class="field-group">
                     <label class="label-login" for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" ngModel
-                        #inputEmail="ngModel" required />
+                    <input type="email" name="email" id="email" placeholder="john.doe@gmail.com"
+                        formControlName="loginEmail" />
+                    <div>
+                        @if(formLogin.get('loginEmail')?.touched){
+                        @if(formLogin.get('loginEmail')?.errors?.['required']){
+                        <p class="error-login">Email is required</p>
+                        }
+                        }
+                    </div>
                 </div>
                 <div class="field-group">
                     <label class="label-login" for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="******" ngModel
-                        #inputPassword="ngModel" minlength="5" required />
+                    <input type="password" name="password" id="password" placeholder="******"
+                        formControlName="loginPassword" />
+                    <div>
+                        @if(formLogin.get('loginPassword')?.touched){
+                        @if(formLogin.get('loginPassword')?.errors?.['required']){
+                        <p class="error-login">Password is required</p>
+                        }
+                        }
+                    </div>
                 </div>
+<!-- 
+                <div>
+                    <p class="error-login">{{errorMsg}}</p>
+                </div> -->
 
                 <div class="login-btn-cont">
 
@@ -24,7 +42,7 @@
                 </div>
 
                 <p class="text-center">
-                   Don't have an account?
+                    Don't have an account?
                     <a routerLink="/register"><span>Register</span></a>
                 </p>
             </fieldset>

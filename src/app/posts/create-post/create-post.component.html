@@ -1,0 +1,93 @@
+<div class="register-container">
+    <div class="register-form-container">
+        <form class="register" [formGroup]="formCreatePost" (ngSubmit)="createNewPost()">
+            <fieldset>
+                <h2>Create Post.</h2>
+
+                <div class="groups">
+                    <div class="group-one">
+                        <div class="field-group">
+                            <label class="label-post" for="postImageUrl">Post Picture URL: </label>
+                            <input type="text" name="postImageUrl" id="postImageUrl" placeholder="Post Image link..."
+                                formControlName="postImageUrl" />
+                            <div>
+                                @if(formCreatePost.get('postImageUrl')?.touched){
+                                @if(formCreatePost.get('postImageUrl')?.errors?.['required']){
+                                <p class="error-create-post">Post Image is required</p>
+                                }
+                                }
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label class="label-post" for="postTitle">Post Title:</label>
+                            <input type="text" name="postTitle" id="postTitle" placeholder="React is Better"
+                                formControlName="postTitle" />
+                            <div>
+                                @if(formCreatePost.get('postTitle')?.touched){
+                                @if(formCreatePost.get('postTitle')?.errors?.['required']){
+                                <p class="error-create-post">Post Title is required</p>
+                                }
+                                @if(formCreatePost.get('postTitle')?.errors?.['minlength']){
+                                <p class="error-create-post">Post Title must be<br>atleast 6 characters long</p>
+                                }
+                                }
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label class="label-post" for="postTrend">Post Trend:</label>
+                            <input type="text" name="postTrend" id="postTrend" placeholder="AI,Crypto etc."
+                                formControlName="postTrend" />
+                            <div>
+                                @if(formCreatePost.get('postTrend')?.touched){
+                                @if(formCreatePost.get('postTrend')?.errors?.['required']){
+                                <p class="error-create-post">Post Trend is required</p>
+                                }
+                                }
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label class="label-post" for="postReadTime">Post Read Time:</label>
+                            <input type="text" name="postReadTime" id="postReadTime" placeholder="3 minutes etc.."
+                                formControlName="postReadTime" />
+
+                                <div>
+                                    @if(formCreatePost.get('postReadTime')?.touched){
+                                    @if(formCreatePost.get('postReadTime')?.errors?.['required']){
+                                    <p class="error-create-post">Post Read Time is required</p>
+                                    }
+                                    }
+                                </div>
+                        </div>
+                        <div class="field-group">
+                            <label class="label-post" for="postDescription">Post Description:</label>
+                            <textarea type="text" name="postDescription" id="postDescription"
+                                placeholder="Lorem ipsum....." formControlName="postDescription" cols="5"
+                                rows="5"> </textarea>
+                                <div>
+                                    @if(formCreatePost.get('postDescription')?.touched){
+                                    @if(formCreatePost.get('postDescription')?.errors?.['required']){
+                                    <p class="error-create-post">Post Description is required</p>
+                                    }
+                                    @if(formCreatePost.get('postDescription')?.errors?.['minlength']){
+                                        <p class="error-create-post">Post Description must be<br> atleast 10 chars long</p>
+                                        }
+                                    }
+                                </div>
+                                
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="create-btn-cont">
+
+                    <button class="create-btn">
+                        Create Post
+                    </button>
+
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>

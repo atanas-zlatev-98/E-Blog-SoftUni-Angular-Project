@@ -1,28 +1,45 @@
 import { Component } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user/user-service.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,RouterLink],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  constructor(private userService:UserService,private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
-  login(form: NgForm) {
+  // errorMsg= string as string;
 
-    if(form.invalid){
+  formLogin = new FormGroup({
+
+    loginEmail: new FormControl('',
+      [Validators.required],
+    ),
+
+    loginPassword: new FormControl('',
+      [Validators.required]
+    ),
+
+  })
+
+
+  login() {
+
+    if (this.formLogin.invalid) {
+      // this.errorMsg = 'Invalid Username or Password'
       return
     }
 
-    const {email,password} = form.value;
-  
-    this.userService.login(email,password).subscribe(()=>{
-      this.router.navigate(['/home'])
-    })
+    const { loginEmail, loginPassword } = this.formLogin.value;
+
+      this.userService.login(loginEmail!, loginPassword!).subscribe(() => {
+        this.router.navigate(['/home'])
+      })
+
   }
 }

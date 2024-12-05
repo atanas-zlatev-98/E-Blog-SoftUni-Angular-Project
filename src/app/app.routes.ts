@@ -6,6 +6,8 @@ import { AllPostsComponent } from './posts/all-posts/all-posts.component';
 import { PostDetailsComponent } from './posts/all-posts/post-details/post-details.component';
 import { SinglePostComponent } from './posts/all-posts/single-post/single-post.component';
 import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
+import { CreatePostComponent } from './posts/create-post/create-post.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,6 +25,10 @@ export const routes: Routes = [
             component: SinglePostComponent,
             // canActivate: [AuthGuard],
           },
+          {path:'edit/:postId',
+            component:EditPostComponent
+          }
         ],
       },
+      {path:'create-post',component:CreatePostComponent}
 ];

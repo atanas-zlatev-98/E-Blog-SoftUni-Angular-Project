@@ -18,15 +18,19 @@ export class UserService{
   get isLogged(): boolean {
     return !!this.user;
   }
+
+  get userId():String {
+    return this.user?._id!;
+  }
   
   constructor(private http: HttpClient,private router:Router) {
     this.user$.subscribe((user) => {
       this.user = user;
     });
+
   }
 
   login(email: string, password: string) {
-
     return this.http
       .post<AuthUserInterface>('/api/login', { email, password })
       .pipe(tap(user => this.user$$.next(user)));
@@ -52,4 +56,5 @@ export class UserService{
       .get<AuthUserInterface>('/api/users/profile')
       .pipe(tap(user => this.user$$.next(user)));
   }
+
 }

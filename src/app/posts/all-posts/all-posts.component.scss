@@ -1,17 +1,14 @@
 .all-posts {
     width: 100%;
-    height: 500px;
-    background-color: red;
     display: flex;
     justify-content: center;
     font-family: "Chakra Petch", sans-serif;
+    padding: 50px 0px;
 }
 
 .post-container {
     max-width: 1200px;
     width: 100%;
-    height: 500px;
-    background-color: purple;
 }
 
 .post-container-header {
@@ -28,4 +25,14 @@
     width: 100%;
     height: 2px;
     background-color: #f6f6f6;
+}
+
+.post-container-header {
+    margin-bottom: 30px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

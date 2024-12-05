@@ -1,6 +1,6 @@
 <div class="register-container">
     <div class="register-form-container">
-        <form class="register" #form="ngForm" (ngSubmit)="register(form)">
+        <form class="register" [formGroup]="formRegister" (ngSubmit)="register()">
             <fieldset>
                 <h2>Register.</h2>
 
@@ -8,37 +8,107 @@
                     <div class="group-one">
                         <div class="field-group">
                             <label class="label-register" for="imgUrl">Profile Picture URL: </label>
-                            <input type="text" name="imgUrl" id="imgUrl" placeholder="Profile Image link..." ngModel
-                                #inputImgUrl="ngModel" required />
+                            <input type="text" name="imgUrl" id="imgUrl" placeholder="Profile Image link..."
+                                formControlName="imgUrl" />
+
+                            <div>
+                                @if(formRegister.get('imgUrl')?.touched){
+                                @if(formRegister.get('imgUrl')?.errors?.['required']){
+                                <p class="error-register">Profile picture is required</p>
+                                }
+                                }
+                            </div>
                         </div>
                         <div class="field-group">
                             <label class="label-register" for="username">Username:</label>
-                            <input type="text" name="username" id="username" placeholder="exp. John" ngModel
-                                #inputUsername="ngModel" required />
+                            <input type="text" name="username" id="username" placeholder="exp. John"
+                                formControlName="username" />
+
+                            <div>
+                                @if(formRegister.get('username')?.touched){
+                                @if(formRegister.get('username')?.errors?.['required']){
+                                <p class="error-register">Username is required</p>
+                                }
+                                @if(formRegister.get('username')?.errors?.['minlength']){
+                                <p class="error-register">Username must be atleast <br> 6 characters long</p>
+                                }
+                                }
+                            </div>
                         </div>
                         <div class="field-group">
                             <label class="label-register" for="email">Email:</label>
-                            <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" ngModel
-                                #inputEmail="ngModel" required />
+                            <input type="email" name="email" id="email" placeholder="mark@gmail.com"
+                                formControlName="email" />
+
+                            <div>
+                                @if(formRegister.get('email')?.touched){
+                                @if(formRegister.get('email')?.errors?.['required']){
+                                <p class="error-register">Email is required</p>
+                                }
+                                @if(formRegister.get('email')?.errors?.['email']){
+                                <p class="error-register">Email is not valid</p>
+                                }
+                                }
+                            </div>
+
                         </div>
                     </div>
                     <div class="group-two">
                         <div class="field-group">
                             <label class="label-register" for="summary">Summary:</label>
-                            <textarea type="text" name="userSummary" id="userSummary" placeholder="Tell us about yourself..."
-                                ngModel #inputEmail="ngModel" required cols="3" rows="3"></textarea>
-                        </div>
+                            <textarea type="text" name="userSummary" id="userSummary"
+                                placeholder="Tell us about yourself..." formControlName="userSummary" cols="3"
+                                rows="3"></textarea>
 
-                        <div class="field-group">
-                            <label class="label-login" for="password">Password</label>
-                            <input type="password" name="password" id="password" placeholder="******" ngModel
-                                #inputPassword="ngModel" minlength="5" required />
+                            <div>
+                                @if(formRegister.get('userSummary')?.touched){
+                                @if(formRegister.get('userSummary')?.errors?.['required']){
+                                <p class="error-register">Summary is required</p>
+                                }
+                                @if(formRegister.get('userSummary')?.errors?.['minlength']){
+                                <p class="error-register">Summary must be atleast <br> 10 characters long</p>
+                                }
+                                }
+                            </div>
                         </div>
+                        <div formGroupName="passwordGroup">
+                            <div class="field-group">
+                                <label class="label-login" for="password">Password</label>
+                                <input type="password" name="password" id="password" placeholder="******" minlength="5"
+                                    formControlName="password" />
 
-                        <div class="field-group">
-                            <label class="label-login" for="rePassword">Repeat Password</label>
-                            <input type="password" name="rePass" id="rePass" placeholder="******" ngModel
-                                #inputPassword="ngModel" minlength="5" required />
+                                <div>
+                                    @if(formRegister.get('passwordGroup')?.get('password')?.touched){
+                                    @if(formRegister.get('passwordGroup')?.get('password')?.errors?.['required']){
+                                    <p class="error-register">Password is required</p>
+                                    }
+                                    @if(formRegister.get('passwordGroup')?.get('password')?.errors?.['minlength']){
+                                    <p class="error-register">Password must be atleast <br> 6 characters long</p>
+                                    }
+                                    }
+                                </div>
+
+                            </div>
+
+                            <div class="field-group">
+                                <label class="label-login" for="rePassword">Repeat Password</label>
+                                <input type="password" name="rePass" id="rePass" placeholder="******" minlength="5"
+                                    formControlName="rePass" />
+
+                                <div>
+                                    @if(formRegister.get('passwordGroup')?.get('rePass')?.touched){
+                                    @if(formRegister.get('passwordGroup')?.get('rePass')?.errors?.['required']){
+                                    <p class="error-register">Repeat password is required</p>
+                                    }
+                                    
+                                    }
+
+                                    @if(formRegister.get('passwordGroup')?.errors?.['passwordsMatch']){
+                                        <p class="error-register">Passwords do not match</p>
+                                    }
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -88,3 +88,12 @@ fieldset > h2 {
         text-decoration: underline;
     }
 }
+
+.error-register {
+    background-color: red;
+    color: white;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px 0px;
+    text-align: center;
+}

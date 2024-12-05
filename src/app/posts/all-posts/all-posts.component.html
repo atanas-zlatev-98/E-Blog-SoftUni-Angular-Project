@@ -6,7 +6,7 @@
         </div>
 
         <div class="posts">
-            @for (post of dummy_posts; track $index) {
+            @for (post of posts; track $index) {
                 <app-post-details [post]="post"/>
             }
         </div>

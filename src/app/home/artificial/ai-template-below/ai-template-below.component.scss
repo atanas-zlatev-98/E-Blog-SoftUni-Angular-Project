@@ -14,8 +14,9 @@
 }
 
 .below-img {
-    width: 150px;
-    height: 100%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 .single-content {
     display: flex;

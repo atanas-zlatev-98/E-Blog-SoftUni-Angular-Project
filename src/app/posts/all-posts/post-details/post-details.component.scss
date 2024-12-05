@@ -1,0 +1,40 @@
+.all-posts-details {
+    display: flex;
+    flex-direction: row;
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+}
+.posts-img-container >img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.read-more-btn {
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: #00c89a;
+    width: fit-content;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.post-header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5px;
+    padding: 15px;
+}
+.post-trend {
+    background: #f6f6f6;
+    width: fit-content;
+    padding: 5px 15px;
+    display: flex;
+    color: black;
+}

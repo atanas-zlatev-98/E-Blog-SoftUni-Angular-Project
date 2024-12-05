@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Posts } from '../../../types';
+import { Post } from '../../../types/post/post';
 
 @Component({
   selector: 'app-template',
@@ -10,5 +10,5 @@ import { Posts } from '../../../types';
   styleUrl: './template.component.scss'
 })
 export class TemplateComponent {
-@Input('post') post: Posts | null = null;
+@Input('post') post: Post | null = null;
 }

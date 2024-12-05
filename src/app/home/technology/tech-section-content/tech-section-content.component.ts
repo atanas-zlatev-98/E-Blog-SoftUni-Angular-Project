@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Posts } from '../../../types';
 import { RouterLink } from '@angular/router';
+import { Post } from '../../../types/post/post';
 
 @Component({
   selector: 'app-tech-section-content',
@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './tech-section-content.component.scss'
 })
 export class TechSectionContentComponent {
-  @Input('post') post: Posts | null = null;
+  @Input('post') post: Post | null = null;
 }

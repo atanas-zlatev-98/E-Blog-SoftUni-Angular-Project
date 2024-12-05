@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Posts } from '../../types';
+import { Component, OnInit } from '@angular/core';
 import { AiTemplateComponent } from './ai-template/ai-template.component';
 import { AiTemplateBelowComponent } from './ai-template-below/ai-template-below.component';
+import { Post } from '../../types/post/post';
+import { PostService } from '../../services/post/post.service';
 
 @Component({
   selector: 'app-artificial',
@@ -10,16 +11,20 @@ import { AiTemplateBelowComponent } from './ai-template-below/ai-template-below.
   templateUrl: './artificial.component.html',
   styleUrl: './artificial.component.scss'
 })
-export class ArtificialComponent {
-  dummy_posts: Posts[] = [
-    { id: '1', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45 },
-    { id: '2', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45},
-    { id: '3', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45},
-  ];
-  dummy_posts_below: Posts[] = [
-    { id: '1', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45 },
-    { id: '2', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45},
-    { id: '3', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45},
-    { id: '3', imageUrl: 'https://i.ytimg.com/vi/5JV_p0Stewo/maxresdefault.jpg',title:'EU could approve Apples tap and go payment proposal in',createdAt:'14 Jan, 2024',createdBy:'Elon Musk',trend:"Technology",readTime: '3 Minutes',likes: 45},
-  ];
+export class ArtificialComponent implements OnInit{
+
+
+  constructor(private postService:PostService){}
+
+  aiTopPosts: Post[] = [];
+  aiBottomPosts: Post[] = [];
+
+ngOnInit(): void {
+  
+  this.postService.getAllPosts().subscribe((posts)=>{
+    this.aiTopPosts = posts.filter(x=>x.postTrend=='Artificial Intelligence').slice(0,3);
+    this.aiBottomPosts = posts.filter(x=>x.postTrend == 'Artificial Intelligence').slice(-4).reverse();
+  })
+
+}
 }

@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { Posts } from '../../../types';
+import { Post } from '../../../types/post/post';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-latest-news-single',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './latest-news-single.component.html',
   styleUrl: './latest-news-single.component.scss'
 })
 export class LatestNewsSingleComponent {
-@Input("post") post:Posts | null = null;
+@Input("posts") post:Post | null = null;
 }

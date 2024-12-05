@@ -1,13 +1,13 @@
-<div class="single-tech-posts">
+<div routerLink="/posts/{{post?._id}}" class="single-tech-posts">
     <div class="single-post-img">
-        <img class="single-img" src={{post?.imageUrl}} alt={{post?.title}}/>
+        <img class="single-img" src={{post?.postImageUrl}} alt={{post?.postTitle}}/>
     </div>
     <div class="single-tech-posts-text">
-        <p class="single-tech-posts-trend">{{post?.trend}}</p>
-        <p class="single-tech-posts-title">{{post?.title}}</p>
+        <p class="single-tech-posts-trend">{{post?.postTrend}}</p>
+        <p class="single-tech-posts-title">{{post?.postTitle}}</p>
         <div>
-            <p>{{post?.readTime}}</p>
-            <p>Likes: {{post?.likes}}</p>
+            <p>{{post?.postReadTime}} Minute Read</p>
+            <p>Likes: {{post?.userLikes?.length || 0}} Likes</p>
         </div>
     </div>
 </div>

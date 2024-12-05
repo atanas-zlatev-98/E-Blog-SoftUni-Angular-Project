@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -6,15 +6,16 @@
     font-family: "Chakra Petch", sans-serif;
 }
 
-.login-form-container {
+.register-form-container {
     max-width: 1200px;
     width: 100%;
-    height: 700px;
+    height: fit-content;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
 }
 
-.login {
+.register {
     margin-top: 100px;
 }
 
@@ -33,7 +34,7 @@ fieldset > h2 {
     margin-bottom: 30px;
 }
 
-.login-btn {
+.create-btn {
     font-family: "Chakra Petch", sans-serif;
     font-size: 20px;
     padding: 5px 20px;
@@ -49,7 +50,7 @@ fieldset > h2 {
     }
 }
 
-.label-login {
+.label-post{
     margin-bottom: 10px;
 }
 
@@ -57,8 +58,25 @@ fieldset > h2 {
     padding: 10px;
     font-size: 18px;
 }
-
-.login-btn-cont {
+.field-group>textarea {
+    padding: 10px;
+    font-size: 18px;
+}
+.groups{
+    display: flex;
+    gap: 20px;
+}
+.group-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.group-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.create-btn-cont {
     margin-bottom: 15px;
 }
 
@@ -71,7 +89,7 @@ fieldset > h2 {
     }
 }
 
-.error-login {
+.error-create-post {
     background-color: red;
     color: white;
     margin-top: 5px;

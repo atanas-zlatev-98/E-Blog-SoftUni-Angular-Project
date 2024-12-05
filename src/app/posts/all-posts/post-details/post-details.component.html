@@ -1,1 +1,16 @@
-<p routerLink='/posts/{{post?.id}}'>{{post?.title}}</p>
+<div class="all-posts-details">
+    <div class="posts-img-container">
+        <img src={{post?.postImageUrl}} alt="img" />
+    </div>
+
+    <div class="post-content">
+        <div class="post-header">
+            <p class="post-trend">{{post?.postTrend}}</p>
+            <h2>{{post?.postTitle}}</h2>
+
+        </div>
+        <p>{{post?.postDescription}}</p>
+
+        <a class="read-more-btn" routerLink="/posts/{{post?._id}}">Read More</a>
+    </div>
+</div>

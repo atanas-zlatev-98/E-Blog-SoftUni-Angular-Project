@@ -95,3 +95,19 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
+
+.ai-top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-posts {
+    background: #00c89a;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -7,26 +7,25 @@
             </div>
             <div class="technology-content">
                 <div class="technology-content-main">
-                    <a routerLink="#" class="tech-main-link">
+                    <a routerLink="/posts/{{singlePost._id}}" class="tech-main-link">
                         <div class="overflow">
-                            <img class="main-img" [attr.src]="imgUrlMain" />
+                            <img class="main-img" src={{singlePost.postImageUrl}} />
                         </div>
                         <div class="tech-main-link-trend">
-                            <h3 routerLink="/login">Trend</h3>
+                            <h3 routerLink="/login">{{singlePost.postTrend}}</h3>
                         </div>
                         <div class="tech-main-link-text">
-                            <h3>Cloud journeys: Jeff Barr on
-                                inspiring cloud industry leaders</h3>
+                            <h3>{{singlePost.postTitle}}</h3>
                             <div>
-                                <p>By Elon Musk</p>
-                                <p>3 Minute Read</p>
-                                <p>Likes 45</p>
+                                <p>By {{singlePost.createdBy}}</p>
+                                <p>{{singlePost.postReadTime}} Minute Read</p>
+                                <p>Likes {{singlePost.userLikes.length || 0}}</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="technology-content-side">
-                    @for (post of dummy_posts; track $index) {
+                    @for (post of moreTechPosts; track $index) {
                         <app-tech-section-content  [post]="post"/>
                     }
                 </div>
@@ -36,17 +35,17 @@
             <div class="feature-post-header">
                 <h3>Feature Post</h3>
 
-                <div class="ft-post">
+                <div routerLink="/posts/{{featurePost._id}}" class="ft-post">
                     <div class="overflow-feature-post">
-                        <img [attr.src]="imgUrlMain" alt="asd"/>
+                        <img src={{featurePost.postImageUrl}} alt="img"/>
                     </div>
                     <div class="feature-post-title">
                         <div>
-                            <p>3 Minute Read</p>
-                            <p>Likes 45</p>
+                            <p>{{featurePost.postReadTime}} Minute Read</p>
+                            <p>Likes {{featurePost.userLikes.length || 0}}</p>
                         </div>
-                        <p>Efficient Rules to Organize Your Working Relationship</p>
-                        <p>By Elon</p>
+                        <p>{{featurePost.postTitle}}</p>
+                        <p>By {{featurePost.createdBy}}</p>
                     </div>
                 </div>
             </div>

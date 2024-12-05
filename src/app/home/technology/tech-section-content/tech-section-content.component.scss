@@ -18,7 +18,7 @@
 
 .single-post-img {
     overflow: hidden;
-    width: 200px;
+    width: 135px;
     display: flex;
     justify-content: center;
     object-fit: contain;
@@ -26,8 +26,9 @@
 }
 
 .single-img {
-    width: 200px;
-    height: 100%;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
 }
 
 .single-tech-posts-text {

@@ -1,10 +1,11 @@
-export interface Posts {
-    id:string;
-    imageUrl: string;
-    title:string;
-    createdAt:string;
-    createdBy: string,
-    trend: string,
-    readTime:string;
-    likes: number;
-}
+// export interface Posts {
+//     _id: string;
+//     postImageUrl: string;
+//     postTitle: string;
+//     postDescription: string;
+//     postTrend: string,
+//     postReadTime: string;
+//     created_at: string;
+//     createdBy: string,
+//     likes: number;
+// }

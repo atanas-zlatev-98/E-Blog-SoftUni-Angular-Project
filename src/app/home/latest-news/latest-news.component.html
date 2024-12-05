@@ -6,8 +6,8 @@
             <div class="line"></div>
         </div>
         <div class="latest-news-posts">
-            @for (post of dummy_posts; track $index) {
-                <app-latest-news-single [post]="post"/>
+            @for (post of posts; track $index) {
+                <app-latest-news-single [posts]="post"/>
             }
         </div>
 

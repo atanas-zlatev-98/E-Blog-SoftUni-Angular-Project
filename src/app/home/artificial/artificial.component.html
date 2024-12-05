@@ -8,12 +8,20 @@
     <div class="ai">
         <div>
             <div class="top-3-ai">
-                @for (post of dummy_posts; track $index) {
+
+                @if(aiTopPosts.length == 0){
+                <div class="ai-top">
+                    <h2 class="no-posts">There a currently no posts with AI Trend</h2>
+                </div>
+                }@else {
+                @for (post of aiTopPosts; track $index) {
                 <app-ai-template [post]="post" />
+                }
+
                 }
             </div>
             <div class="top-3-below">
-                @for (post of dummy_posts_below; track $index) {
+                @for (post of aiBottomPosts; track $index) {
                     <app-ai-template-below [post]="post" />
                     }
             </div>
