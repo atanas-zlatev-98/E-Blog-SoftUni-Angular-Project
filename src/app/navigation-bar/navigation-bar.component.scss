@@ -2,6 +2,7 @@ header {
     width: 100%;
     height: 70px;
     // background: rebeccapurple;
+    border-bottom: 1px solid #cbcbcb6b;
     display: flex;
     justify-content: center;
     font-family: "Chakra Petch", sans-serif;
@@ -20,6 +21,7 @@ nav {
 
 .logo {
     font-size: 2.0rem;
+    cursor: pointer;
 }
 .logo > p {
     color: black;

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PostService } from '../../../services/post/post.service';
 import { Post } from '../../../types/post/post';
 import { UserService } from '../../../services/user/user-service.service';
+import { User } from '../../../types/user/user';
 
 @Component({
   selector: 'app-single-post',
@@ -22,6 +23,7 @@ export class SinglePostComponent implements OnInit {
   currentPost = {} as Post;
   // postCreatorId: User | null = null;
   isPostLiked: boolean = false;
+  singlePostId: User|string = '';
 
   get userId(): string {
     return this.userService.user?._id!;
@@ -48,7 +50,6 @@ export class SinglePostComponent implements OnInit {
 
   likePost() {
     const postId = this.route.snapshot.params['postId'];
-    console.log(postId);
     return this.postService.likePost(postId).subscribe(() => {
       this.isPostLiked = !this.isPostLiked;
       this.redirectTo(`/posts/${postId}`);
@@ -74,15 +75,15 @@ export class SinglePostComponent implements OnInit {
     const postId = this.route.snapshot.params['postId'];
 
     this.postService.getPostByid(postId).subscribe((post) => {
-      console.log(post);
+      
       this.currentPost = post;
-
+      this.singlePostId = post.userId;
+      
       if(post.userLikes.includes(this.userId)){
         this.isPostLiked = true;
       }else {
         this.isPostLiked = false;
       }
-      
     })
   }
 

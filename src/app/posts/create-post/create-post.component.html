@@ -35,8 +35,11 @@
                         </div>
                         <div class="field-group">
                             <label class="label-post" for="postTrend">Post Trend:</label>
-                            <input type="text" name="postTrend" id="postTrend" placeholder="AI,Crypto etc."
-                                formControlName="postTrend" />
+                            <select class="post-trend-select" formControlName="postTrend">
+                                <option selected value="Artificial Intelligence">Artificial Intelligence</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Crypto">Crypto</option>
+                            </select>
                             <div>
                                 @if(formCreatePost.get('postTrend')?.touched){
                                 @if(formCreatePost.get('postTrend')?.errors?.['required']){
@@ -44,6 +47,15 @@
                                 }
                                 }
                             </div>
+                            <!-- <input type="text" name="postTrend" id="postTrend" placeholder="AI,Crypto etc."
+                                formControlName="postTrend" />
+                            <div>
+                                @if(formCreatePost.get('postTrend')?.touched){
+                                @if(formCreatePost.get('postTrend')?.errors?.['required']){
+                                <p class="error-create-post">Post Trend is required</p>
+                                }
+                                }
+                            </div> -->
                         </div>
                         <div class="field-group">
                             <label class="label-post" for="postReadTime">Post Read Time:</label>

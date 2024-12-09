@@ -1,5 +1,5 @@
-<div class="all-posts-details">
-    <div class="posts-img-container">
+<div class="user-posts" routerLink="/posts/{{post?._id}}">
+    <div class="user-posts-img-container">
         <img src={{post?.postImageUrl}} alt="img" />
     </div>
 
@@ -10,9 +10,13 @@
 
         </div>
         <p>{{post?.postDescription}}</p>
-        <div class="read-more-contrainer">
+        <div class="edit-menu-container">
             <a class="read-more-btn" routerLink="/posts/{{post?._id}}">Read More</a>
-            <p><b>Likes:</b> {{post?.userLikes ? post?.userLikes?.length : 0}}</p>
+            <div class="edit-menu">
+                <p routerLink="/posts/edit/{{post?._id}}">Edit Post</p>
+                <p (click)="deleteUserPost(post?._id)">Delete Post</p>
+            </div>
         </div>
+
     </div>
 </div>

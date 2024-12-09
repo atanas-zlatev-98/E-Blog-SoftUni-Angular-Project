@@ -1,11 +1,11 @@
 <header>
     <nav>
-        <div class="logo"><p><span>E.</span>BLOG</p></div>
+        <div class="logo" routerLink="/"><p><span>E.</span>BLOG</p></div>
         <div class="nav-ul">
             <ul>
                 <li><a routerLink="">Home</a></li>
                 <li><a routerLink="posts">Posts</a></li>
-                <li><a href="">Trends</a></li>
+                <li><a routerLink="trends">Trends</a></li>
                 <li><a routerLink="top-10">Top 10</a></li>
             </ul>
         </div>
@@ -18,7 +18,7 @@
                         <ul class="ul-shown-menu">
                             <li (click)="clickEvent()" routerLink="profile">Profile</li>
                             <li (click)="clickEvent()" routerLink="create-post">Create Post</li>
-                            <li (click)="clickEvent()" routerLink="#">My Posts</li>
+                            <!-- <li (click)="clickEvent()" routerLink="#">My Posts</li> -->
                             <li (click)="logout()">Log Out</li>
                         </ul>
                     </div>

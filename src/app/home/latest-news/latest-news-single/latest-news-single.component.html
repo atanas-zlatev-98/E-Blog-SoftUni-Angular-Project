@@ -5,11 +5,12 @@
     <div class="single-content">
         <h2 class="trend">{{post?.postTrend}}</h2>
         <p class="title">{{post?.postTitle}}</p>
+        <p>{{post?.postDescription}}</p>
         <div class="read-time">
             <p>
-                Read Time: {{post?.postReadTime}}
+                {{post?.postReadTime}} Minute Read
             </p>
-                <p>{{post?.userLikes}} Likes</p>
+                <p>{{post?.userLikes ? post?.userLikes?.length : 0}} Likes</p>
         </div>
     </div>
 </div>

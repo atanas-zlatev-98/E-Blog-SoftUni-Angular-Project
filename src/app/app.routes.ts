@@ -10,6 +10,7 @@ import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { Top10Component } from './posts/top-10/top-10.component';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { TrendsComponent } from './posts/trends/trends.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -31,4 +32,8 @@ export const routes: Routes = [
       },
       {path:'create-post',component:CreatePostComponent,canActivate:[AuthGuard]},
       {path:'top-10',component:Top10Component},
+      {path:'trends',children:[
+        {path:'',component:TrendsComponent},
+        
+      ]}
 ];

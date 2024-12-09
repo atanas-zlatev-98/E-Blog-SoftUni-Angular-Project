@@ -1,5 +1,9 @@
 <div class="single-post-details-container">
     <div class="post-container">
+        <div class="post-container-header-one">
+            <h1>{{currentPost.postTitle}}.</h1>
+            <div class="line"></div>
+        </div>
         <div class="img-container">
             <img src={{currentPost.postImageUrl}} alt="img" />
         </div>
@@ -8,7 +12,7 @@
                 <p class="single-post-trend">{{currentPost.postTrend}}</p>
                 <p>Created by: <b>{{currentPost.createdBy}}</b></p>
                 <p>Read Time: <b>{{currentPost.postReadTime}} Minutes</b></p>
-                <p>Likes: <b>{{currentPost.userLikes.length || 0}}</b></p>
+                <p>Likes: <b>{{currentPost.userLikes ? currentPost.userLikes.length : 0}}</b></p>
             </div>
             <div>
                 @if(isLoggedIn){
@@ -17,19 +21,20 @@
                 }@else {
                 <p class="like-btn" (click)="likePost()">Like Post</p>
                 }
-                }
                 <div class="edit-menu">
-                    @if(userId == currentPost.userId){
+                    @if(userId == singlePostId){
                     <a class="edit-btn" routerLink="/posts/edit/{{currentPost._id}}">Edit Post</a>
                     <a class="delete-btn" (click)="deletePost()">Delete Post</a>
                     }
                 </div>
+                }
+                
             </div>
 
         </div>
         <div class="post-description-data">
             <div class="post-container-header">
-                <h1>Description</h1>
+                <h1>Summary.</h1>
                 <div class="line"></div>
             </div>
             <p>{{currentPost.postDescription}}</p>

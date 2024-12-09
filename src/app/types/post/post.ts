@@ -11,7 +11,7 @@ export interface Post {
     posts: string[];
     subscribers: string[];
     updatedAt: string;
-    userId: string;
+    userId: User;
     userLikes: string[];
     __v: number;
     _id: string

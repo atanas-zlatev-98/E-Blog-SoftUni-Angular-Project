@@ -1,11 +1,11 @@
-.all-posts-details {
+.user-posts {
     display: flex;
     flex-direction: row;
     &:hover {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 }
-.posts-img-container >img {
+.user-posts-img-container >img {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -18,6 +18,7 @@
     text-align: center;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 .post-header{
     display: flex;
@@ -30,6 +31,7 @@
     justify-content: space-evenly;
     gap: 5px;
     padding: 15px;
+    width: 100%;
 }
 .post-trend {
     background: #f6f6f6;
@@ -38,8 +40,35 @@
     display: flex;
     color: black;
 }
-.read-more-contrainer {
+.edit-menu-container {
+    width: 100%;
     display: flex;
-    gap: 20px;
-    align-items: center;
+    justify-content: space-between;
+}
+.edit-menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.edit-menu > p {
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: #00c89a;
+    width: fit-content;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-menu > p:last-child {
+    padding: 5px 10px;
+    border-radius: 50px;
+    background-color: #9e0000;
+    width: fit-content;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
 }

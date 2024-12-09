@@ -6,11 +6,21 @@
         </div>
         <div class="user-profile-content">
             <h1>{{userProfile.username}}</h1>
-            <p>{{userProfile.email}}</p>
-            <p>{{userProfile.userSummary}}</p>
-            <p>post count: {{userProfile.themes.length}}</p>
+            <p><b>Email:</b> {{userProfile.email}}</p>
+            <p><b>Summary:</b><br>{{userProfile.userSummary}}</p>
+            <p><b>Posts Count:</b> {{userProfile.themes.length}}</p>
            
         </div>
     </div>
-    <div class="user-posts-container"></div>
+    <div class="user-posts-container">
+
+        <div class="post-container-header">
+            <h1>My Posts.</h1>
+            <div class="line"></div>
+        </div>
+
+        @for(post of userPosts;track $index){
+            <app-user-posts [post]="post"/>
+        }
+    </div>
 </div>
