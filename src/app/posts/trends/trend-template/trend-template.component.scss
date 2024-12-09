@@ -1,0 +1,62 @@
+.single-top-3 {
+    width: 250px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        .img-top-3 {
+            transform: scale(1.03);
+            transition: 0.5s;
+        }
+
+        .overflow-content>h3 {
+            text-decoration: underline;
+        }
+
+        .mini {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+.overflow {
+    overflow: hidden;
+    position: absolute;
+}
+
+.overflow>img {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.overflow-content {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    bottom: 0;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.overflow-content>h3 {
+    background-color: white;
+    padding: 0 10px;
+}
+
+.trend {
+    background: #FFF;
+    width: fit-content;
+    padding: 5px 15px;
+}
+
+.mini {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    gap: 10px;
+}

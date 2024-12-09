@@ -9,7 +9,7 @@
             @if(posts.length <=0){
                 <div class='no-posts-container'>
                     <p class="no-posts">There are currently no recent posts!</p>
-                    </div>
+                </div>
             }@else{
                 @for (post of posts; track $index) {
                     <app-post-details [post]="post"/>

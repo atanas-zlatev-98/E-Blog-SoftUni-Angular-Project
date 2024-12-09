@@ -1,1 +1,87 @@
-<p>trends works!</p>
+<div class="all-posts">
+    <div class="post-container">
+        <div class="post-container-header">
+            <h1>Artificial Intelligence Posts.</h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="posts">
+
+            <div class="trends">
+                <div>
+                    <div class="top-3">
+
+                        @if(aiPosts.length == 0){
+                        <div class="top">
+                            <h2 class="no-posts">There are currently no posts with AI Trend</h2>
+                        </div>
+                        }@else {
+                        @for (post of aiPosts; track $index) {
+                            <app-trend-template [post]="post"/>
+                        }
+                        <div class="more-of-trend">More AI posts.</div>
+
+                        }
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="post-container-header">
+            <h1>Technology Posts.</h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="posts">
+            <div class="trends">
+                <div>
+                    <div class="top-3">
+
+                        @if(aiPosts.length == 0){
+                        <div class="top">
+                            <h2 class="no-posts">There are currently no posts with Tech Trend</h2>
+                        </div>
+                        }@else {
+                        @for (post of techPosts; track $index) {
+                            <app-trend-template [post]="post"/>
+                        }
+                        <div class="more-of-trend">More tech posts.</div>
+
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="post-container-header">
+            <h1>Crypto Posts.</h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="posts">
+            <div class="trends">
+                <div class="trends-content">
+                    <div class="top-3">
+
+                        @if(cryptoPosts.length == 0){
+                        <div class="top">
+                            <h2 class="no-posts">There are currently no posts with Crypto Trend</h2>
+                        </div>
+                        }@else {
+                        @for (post of aiPosts; track $index) {
+                            <app-trend-template [post]="post"/>
+                        }
+                        <div class="more-of-trend">More cyrpto posts.</div>
+
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>

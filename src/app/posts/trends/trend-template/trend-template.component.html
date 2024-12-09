@@ -1,0 +1,14 @@
+<div routerLink="/posts/{{post?._id}}" routerLink="/posts/{{post?._id}}" class="single-top-3">
+    <div class="overflow">
+        <img class="img-top-3" src={{post?.postImageUrl}} alt="as"/>
+    </div>
+    <div class="overflow-content">
+        <p class="trend">{{post?.postTrend}}</p>
+        <h3>{{post?.postTitle}}</h3>
+
+        <div class="mini">
+            <p>By {{post?.createdBy}}</p>
+            <p>Likes {{post?.userLikes?.length || 0}}</p>
+        </div>
+    </div>
+</div>
