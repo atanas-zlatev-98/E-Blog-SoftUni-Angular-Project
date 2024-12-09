@@ -7,7 +7,7 @@
         <p class="single-tech-posts-title">{{post?.postTitle}}</p>
         <div>
             <p>{{post?.postReadTime}} Minute Read</p>
-            <p>Likes: {{post?.userLikes?.length || 0}} Likes</p>
+            <p>Likes: {{post?.userLikes ? post?.userLikes?.length: 0}} Likes</p>
         </div>
     </div>
 </div>

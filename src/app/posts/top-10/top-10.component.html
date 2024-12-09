@@ -1,18 +1,18 @@
 <div class="all-posts">
     <div class="post-container">
         <div class="post-container-header">
-            <h1>Recent Posts</h1>
+            <h1>Top 10 most liked posts.</h1>
             <div class="line"></div>
         </div>
 
         <div class="posts">
-            @if(posts.length <=0){
+            @if(posts.length <= 0){
                 <div class='no-posts-container'>
-                    <p class="no-posts">There are currently no recent posts!</p>
+                    <p class="no-posts">There are currently no created posts!</p>
                     </div>
             }@else{
                 @for (post of posts; track $index) {
-                    <app-post-details [post]="post"/>
+                    <app-top-ten-single [post]="post"/>
                 }
             }
         </div>

@@ -1,0 +1,46 @@
+const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema.Types;
+
+const themeSchema = new mongoose.Schema({
+    postImageUrl: {
+        type:String,
+        required:true,
+    },
+    postTitle: {
+        type: String,
+        required: true
+    },
+    postDescription:{
+        type:String,
+        required:true,
+    },
+    postTrend:{
+        type:String,
+        required:true,
+    }, 
+    postReadTime:{
+        type:String,
+        required:true,
+    },
+    createdBy:{
+        type:String,
+    },
+    userLikes:[{
+        type: ObjectId,
+        ref: "User"
+    }],
+    subscribers: [{
+        type: ObjectId,
+        ref: "User"
+    }],
+    userId: {
+        type: ObjectId,
+        ref: "User"
+    },
+    posts: [{
+        type: ObjectId,
+        ref: "Post"
+    }],
+}, { timestamps: { createdAt: 'created_at' } });
+
+module.exports = mongoose.model('Theme', themeSchema);

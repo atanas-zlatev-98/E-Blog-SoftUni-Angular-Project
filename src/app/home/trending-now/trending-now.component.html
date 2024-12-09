@@ -2,9 +2,18 @@
     <h2>Trending Now</h2>
     <div class="center">
         <div class="trending">
-            @for(post of trendingPosts; track $index){
-            <app-template class="temp" [post]="post" />
-            }
+            @if(trendingPosts.length <= 0){
+                <div class='no-posts-container'>
+                    <p class="no-posts">No posts are created!</p>
+                </div>
+
+                }@else {
+
+                @for(post of trendingPosts; track $index){
+                <app-template class="temp" [post]="post" />
+                }
+
+                }
         </div>
     </div>
 </div>

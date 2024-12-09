@@ -26,3 +26,21 @@
 .temp {
     width: 250px;
 }
+
+.no-posts-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: red;
+}
+.no-posts {
+    text-align: center;
+    width: fit-content;
+    background-color: #00c89a;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    padding: 10px 100px;
+    color: white;
+    font-weight: bold;
+}

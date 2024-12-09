@@ -12,7 +12,11 @@
             </div>
             <div>
                 @if(isLoggedIn){
-                    <p class="like-btn">Like Post</p>
+                @if(isPostLiked){
+                <p class="like-btn" (click)="dislikePost()">Dislike</p>
+                }@else {
+                <p class="like-btn" (click)="likePost()">Like Post</p>
+                }
                 }
                 <div class="edit-menu">
                     @if(userId == currentPost.userId){

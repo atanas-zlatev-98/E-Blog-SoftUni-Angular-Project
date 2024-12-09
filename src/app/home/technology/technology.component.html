@@ -5,50 +5,66 @@
                 <h2>Technology</h2>
                 <div class="line"></div>
             </div>
-            <div class="technology-content">
-                <div class="technology-content-main">
-                    <a routerLink="/posts/{{singlePost._id}}" class="tech-main-link">
-                        <div class="overflow">
-                            <img class="main-img" src={{singlePost.postImageUrl}} />
+
+            @if(moreTechPosts.length <=0){ 
+                <div class='no-posts-container'>
+                <p class="no-posts">There are currently no posts with technology trend</p>
+        </div>
+
+        }@else {
+        <div class="technology-content">
+            <div class="technology-content-main">
+                <a routerLink="/posts/{{singlePost._id}}" class="tech-main-link">
+                    <div class="overflow">
+                        <img class="main-img" src={{singlePost.postImageUrl}} />
+                    </div>
+                    <div class="tech-main-link-trend">
+                        <h3 routerLink="/login">{{singlePost.postTrend}}</h3>
+                    </div>
+                    <div class="tech-main-link-text">
+                        <h3>{{singlePost.postTitle}}</h3>
+                        <div>
+                            <p>By {{singlePost.createdBy}}</p>
+                            <p>{{singlePost.postReadTime}} Minute Read</p>
+                            <p>Likes {{singlePost.userLikes ? singlePost.userLikes.length : 0}}</p>
                         </div>
-                        <div class="tech-main-link-trend">
-                            <h3 routerLink="/login">{{singlePost.postTrend}}</h3>
-                        </div>
-                        <div class="tech-main-link-text">
-                            <h3>{{singlePost.postTitle}}</h3>
-                            <div>
-                                <p>By {{singlePost.createdBy}}</p>
-                                <p>{{singlePost.postReadTime}} Minute Read</p>
-                                <p>Likes {{singlePost.userLikes.length || 0}}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="technology-content-side">
-                    @for (post of moreTechPosts; track $index) {
-                        <app-tech-section-content  [post]="post"/>
-                    }
-                </div>
+                    </div>
+                </a>
+            </div>
+            <div class="technology-content-side">
+                @for (post of moreTechPosts; track $index) {
+                <app-tech-section-content [post]="post" />
+                }
             </div>
         </div>
-        <div class="feature-post">
-            <div class="feature-post-header">
-                <h3>Feature Post</h3>
 
-                <div routerLink="/posts/{{featurePost._id}}" class="ft-post">
-                    <div class="overflow-feature-post">
-                        <img src={{featurePost.postImageUrl}} alt="img"/>
+        }
+    </div>
+    <div class="feature-post">
+        <div class="feature-post-header">
+            <h3>Feature Post</h3>
+
+            @if(!featurePost){
+            <div class='no-posts-container'>
+                <p class="no-posts">No feature post!</p>
+            </div>
+            }@else{
+            <div routerLink="/posts/{{featurePost._id}}" class="ft-post">
+                <div class="overflow-feature-post">
+                    <img src={{featurePost.postImageUrl}} alt="img" />
+                </div>
+                <div class="feature-post-title">
+                    <div>
+                        <p>{{featurePost.postReadTime}} Minute Read</p>
+                        <p>Likes {{featurePost.userLikes ? featurePost.userLikes.length : 0}}</p>
                     </div>
-                    <div class="feature-post-title">
-                        <div>
-                            <p>{{featurePost.postReadTime}} Minute Read</p>
-                            <p>Likes {{featurePost.userLikes.length || 0}}</p>
-                        </div>
-                        <p>{{featurePost.postTitle}}</p>
-                        <p>By {{featurePost.createdBy}}</p>
-                    </div>
+                    <p>{{featurePost.postTitle}}</p>
+                    <p>By {{featurePost.createdBy}}</p>
                 </div>
             </div>
+
+            }
         </div>
     </div>
+</div>
 </div>

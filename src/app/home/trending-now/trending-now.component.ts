@@ -20,7 +20,7 @@ export class TrendingNowComponent implements OnInit {
 
  ngOnInit(): void {
    this.postService.getLatestPosts().subscribe((posts)=>{
-    const filteredPosts = posts.slice(0,4);
+    const filteredPosts = posts.sort((a,b)=>b.userLikes.length - a.userLikes.length).slice(0,4);
     this.trendingPosts = filteredPosts;
    })
  }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PostService } from '../../../services/post/post.service';
 import { Post } from '../../../types/post/post';
@@ -13,10 +13,15 @@ import { UserService } from '../../../services/user/user-service.service';
 })
 export class SinglePostComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private postService: PostService, private userService: UserService,private router:Router) { }
+  constructor(private route: ActivatedRoute, 
+    private postService: PostService, 
+    private userService: UserService, 
+    private router: Router,
+  ) { }
 
   currentPost = {} as Post;
   // postCreatorId: User | null = null;
+  isPostLiked: boolean = false;
 
   get userId(): string {
     return this.userService.user?._id!;
@@ -26,20 +31,59 @@ export class SinglePostComponent implements OnInit {
     return this.userService.isLogged;
   }
 
-  deletePost(){
+  deletePost() {
     const postId = this.route.snapshot.params['postId'];
-    this.postService.deletePost(postId).subscribe(()=>{
+    this.postService.deletePost(postId).subscribe(() => {
       this.router.navigate(['/posts'])
+    })
+
+  }
+
+  reloadCurrentRouter(){
+    const currentRoute = this.route.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentRoute]);
+    });
+  }
+
+  likePost() {
+    const postId = this.route.snapshot.params['postId'];
+    console.log(postId);
+    return this.postService.likePost(postId).subscribe(() => {
+      this.isPostLiked = !this.isPostLiked;
+      this.redirectTo(`/posts/${postId}`);
+    })
+   
+  }
+
+  dislikePost() {
+    const postId = this.route.snapshot.params['postId'];
+    return this.postService.dislikePost(postId).subscribe(() => {
+      this.isPostLiked = !this.isPostLiked;
+      this.redirectTo(`/posts/${postId}`);
     })
   }
 
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([uri])});
+  }
+
   ngOnInit(): void {
+
     const postId = this.route.snapshot.params['postId'];
 
     this.postService.getPostByid(postId).subscribe((post) => {
       console.log(post);
       this.currentPost = post;
-    })
 
+      if(post.userLikes.includes(this.userId)){
+        this.isPostLiked = true;
+      }else {
+        this.isPostLiked = false;
+      }
+      
+    })
   }
+
 }

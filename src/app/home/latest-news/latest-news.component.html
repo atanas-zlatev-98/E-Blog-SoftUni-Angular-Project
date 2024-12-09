@@ -6,8 +6,15 @@
             <div class="line"></div>
         </div>
         <div class="latest-news-posts">
+
+            @if(posts.length <=0){
+                <div class='no-posts-container'>
+                    <p class="no-posts">There are currently no posts created!</p>
+            </div>
+            }@else {
             @for (post of posts; track $index) {
-                <app-latest-news-single [posts]="post"/>
+            <app-latest-news-single [posts]="post" />
+            }
             }
         </div>
 
