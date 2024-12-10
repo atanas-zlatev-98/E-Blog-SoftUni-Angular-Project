@@ -68,6 +68,9 @@
                                 @if(formRegister.get('userSummary')?.errors?.['minlength']){
                                 <p class="error-register">Summary must be atleast <br> 10 characters long</p>
                                 }
+                                @if(formRegister.get('userSummary')?.errors?.['maxlength']){
+                                    <p class="error-register">Summary must not exceed<br> 500 characters</p>
+                                    }
                                 }
                             </div>
                         </div>

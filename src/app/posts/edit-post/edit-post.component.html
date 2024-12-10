@@ -30,6 +30,9 @@
                                 @if(formEditPost.get('postTitle')?.errors?.['minlength']){
                                 <p class="error-create-post">Post Title must be<br>atleast 6 characters long</p>
                                 }
+                                @if(formEditPost.get('postTitle')?.errors?.['maxlength']){
+                                    <p class="error-create-post">Post Title must not exceed <br>50 characters</p>
+                                    }
                                 }
                             </div>
                         </div>
@@ -47,19 +50,11 @@
                                 }
                                 }
                             </div>
-                            <!-- <input type="text" name="postTrend" id="postTrend" placeholder="AI,Crypto etc."
-                                formControlName="postTrend" />
-                            <div>
-                                @if(formEditPost.get('postTrend')?.touched){
-                                @if(formEditPost.get('postTrend')?.errors?.['required']){
-                                <p class="error-create-post">Post Trend is required</p>
-                                }
-                                }
-                            </div> -->
+                          
                         </div>
                         <div class="field-group">
                             <label class="label-post" for="postReadTime">Post Read Time:</label>
-                            <input type="text" name="postReadTime" id="postReadTime" placeholder="3 minutes etc.."
+                            <input type="number" name="postReadTime" id="postReadTime" placeholder="3 minutes etc.."
                                 formControlName="postReadTime" />
 
                                 <div>

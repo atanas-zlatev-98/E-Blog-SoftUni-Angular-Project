@@ -17,7 +17,7 @@ export class CreatePostComponent {
 
   formCreatePost = new FormGroup({
     postImageUrl: new FormControl('',[Validators.required]),
-    postTitle: new FormControl('',[Validators.required,Validators.minLength(6)]),
+    postTitle: new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(50)]),
     postTrend: new FormControl('',[Validators.required]),
     postReadTime: new FormControl('',[Validators.required]),
     postDescription: new FormControl('',[Validators.required,Validators.minLength(10)]),

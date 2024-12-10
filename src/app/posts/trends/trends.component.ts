@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post/post.service';
 import { Post } from '../../types/post/post';
 import { TrendTemplateComponent } from './trend-template/trend-template.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-trends',
   standalone: true,
-  imports: [TrendTemplateComponent],
+  imports: [TrendTemplateComponent,RouterLink],
   templateUrl: './trends.component.html',
   styleUrl: './trends.component.scss'
 })

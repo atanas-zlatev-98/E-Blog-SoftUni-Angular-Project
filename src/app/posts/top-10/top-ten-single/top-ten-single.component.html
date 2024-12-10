@@ -9,7 +9,7 @@
             <h2>{{post?.postTitle}}</h2>
 
         </div>
-        <p>{{post?.postDescription}}</p>
+        <p>{{post?.postDescription | summarySlice: 200}}</p>
         <div class="read-more-contrainer">
             <a class="read-more-btn" routerLink="/posts/{{post?._id}}">Read More</a>
             <p><b>Likes:</b> {{post?.userLikes ? post?.userLikes?.length : 0}}</p>

@@ -2,11 +2,12 @@ import { Component, Inject, Input } from '@angular/core';
 import { Post } from '../../../../types/post/post';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PostService } from '../../../../services/post/post.service';
+import { SummaryPipe } from '../../../../pipes/summary.pipe';
 
 @Component({
   selector: 'app-user-posts',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,SummaryPipe],
   templateUrl: './user-posts.component.html',
   styleUrl: './user-posts.component.scss'
 })

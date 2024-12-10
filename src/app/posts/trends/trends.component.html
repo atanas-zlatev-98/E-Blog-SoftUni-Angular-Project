@@ -19,7 +19,7 @@
                         @for (post of aiPosts; track $index) {
                             <app-trend-template [post]="post"/>
                         }
-                        <div class="more-of-trend">More AI posts.</div>
+                        <div class="more-of-trend" routerLink="/trends/Artificial-Intelligence">More AI posts.</div>
 
                         }
                     </div>
@@ -48,7 +48,7 @@
                         @for (post of techPosts; track $index) {
                             <app-trend-template [post]="post"/>
                         }
-                        <div class="more-of-trend">More tech posts.</div>
+                        <div class="more-of-trend" routerLink="/trends/Technology">More tech posts.</div>
 
                         }
                     </div>
@@ -72,10 +72,10 @@
                             <h2 class="no-posts">There are currently no posts with Crypto Trend</h2>
                         </div>
                         }@else {
-                        @for (post of aiPosts; track $index) {
+                        @for (post of cryptoPosts; track $index) {
                             <app-trend-template [post]="post"/>
                         }
-                        <div class="more-of-trend">More cyrpto posts.</div>
+                        <div class="more-of-trend" routerLink="/trends/Crypto">More crypto posts.</div>
 
                         }
                     </div>

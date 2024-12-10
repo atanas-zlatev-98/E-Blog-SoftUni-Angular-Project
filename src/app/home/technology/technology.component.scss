@@ -101,6 +101,10 @@ flex-direction: column;
         .tech-main-link-text > h3  {
            text-decoration: underline;
         }
+        .tech-main-link-trend >h3{
+                background-color: black;
+                color: white;
+        }
     }
 }
 
@@ -118,6 +122,11 @@ flex-direction: column;
     background: white;
     color: black;
     padding: 5px 20px;
+    z-index: 5;
+    &:hover {
+        background-color: black;
+        color: white;
+    }
 }
 .tech-main-link-text {
     position: absolute;

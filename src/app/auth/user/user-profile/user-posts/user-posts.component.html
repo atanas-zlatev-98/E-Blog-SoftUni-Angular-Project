@@ -1,4 +1,4 @@
-<div class="user-posts" routerLink="/posts/{{post?._id}}">
+<div class="user-posts">
     <div class="user-posts-img-container">
         <img src={{post?.postImageUrl}} alt="img" />
     </div>
@@ -9,7 +9,7 @@
             <h2>{{post?.postTitle}}</h2>
 
         </div>
-        <p>{{post?.postDescription}}</p>
+        <p>{{post?.postDescription | summarySlice:200}}</p>
         <div class="edit-menu-container">
             <a class="read-more-btn" routerLink="/posts/{{post?._id}}">Read More</a>
             <div class="edit-menu">

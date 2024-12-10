@@ -3,6 +3,11 @@
     cursor: pointer;
     &:hover {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+        .trend {
+            background-color: black;
+            color: white;
+            // border: 1px solid black;
+        }
         .title {
             text-decoration: underline;
         }
