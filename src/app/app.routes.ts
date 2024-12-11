@@ -3,7 +3,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AllPostsComponent } from './posts/all-posts/all-posts.component';
-import { PostDetailsComponent } from './posts/all-posts/post-details/post-details.component';
 import { SinglePostComponent } from './posts/all-posts/single-post/single-post.component';
 import { UserProfileComponent } from './auth/user/user-profile/user-profile.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
@@ -14,6 +13,7 @@ import { TrendsComponent } from './posts/trends/trends.component';
 import { CryptoTrendComponent } from './posts/trends/crypto-trend/crypto-trend.component';
 import { AiTrendComponent } from './posts/trends/ai-trend/ai-trend.component';
 import { TechTrendComponent } from './posts/trends/tech-trend/tech-trend.component';
+import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -41,5 +41,7 @@ export const routes: Routes = [
         {path:'Artificial-Intelligence',component:AiTrendComponent},
         {path:'Technology',component:TechTrendComponent},
         
-      ]}
+      ]},
+      {path:'404',component:PageNotFoundComponent},
+      {path:'**',redirectTo:'/404'}
 ];
