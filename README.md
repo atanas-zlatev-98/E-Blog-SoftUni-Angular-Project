@@ -1,27 +1,25 @@
-# EBlog
+# EBlog - A Brief Documentation
+EBlog is a cutting-edge blog dedicated to exploring the latest advancements and trends in artificial intelligence, technology, and cryptocurrency. The blog provides in-depth articles, expert insights, and practical guides to help readers stay informed and ahead of the curve in these rapidly evolving fields.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Features
+ - Guest Users:<br>
+    [x] Can Login/Register<br>
+    [x] Can views trends<br>
+    [x] Can view post details<br>
+    [x] Can't create posts<br>
+    [x] Can't interact with the posts<br>
+ - EBlog Users: <br>
+   [x] Can view trends<br>
+   [x] Can view post details<br>
+   [x] Can create posts<br>
+   [x] Can update their own posts<br>
+   [x] Can delete their own post<br>
+   [x] Logged users can like/dislike a post <br>
+   [x] Logged users have a Profile page with their created posts<br>
+- Validation: <br>
+The website has a simple validation when registering a user and creating/updating a post
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- The server is located in the EBlog folder, before you start it make sure you install the dependencies by running npm install in the terminal, the server is running on port 3000!<br>
+- For database i am using MongoDB on localhost:27017 the database is called e-blog<br>
+- For the client side i am using Angular, before you start the app make sure you install the dependencies firts by running npm install in the terminal!
