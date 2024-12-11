@@ -21,5 +21,5 @@ The website has a simple validation when registering a user and creating/updatin
 
 ## Development server
 - The server is located in the EBlog folder, before you start it make sure you install the dependencies by running npm install in the terminal, the server is running on port 3000!<br>
-- For database i am using MongoDB on localhost:27017 the database is called e-blog<br>
+- For database i am using MongoDB on localhost:27017 the database is called e-blog-2<br>
 - For the client side i am using Angular, before you start the app make sure you install the dependencies firts by running npm install in the terminal!
