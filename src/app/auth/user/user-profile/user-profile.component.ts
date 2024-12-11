@@ -4,11 +4,12 @@ import { UserDetails } from '../../../types/user/user';
 import { PostService } from '../../../services/post/post.service';
 import { Post } from '../../../types/post/post';
 import { UserPostsComponent } from './user-posts/user-posts.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [UserPostsComponent],
+  imports: [UserPostsComponent,RouterLink],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })

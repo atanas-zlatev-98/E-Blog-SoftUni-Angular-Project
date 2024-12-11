@@ -19,6 +19,13 @@
             <div class="line"></div>
         </div>
 
+        @if(userPosts.length <= 0){
+            <div class='profile-no-post'>
+                <p>You don't have any post created! <span routerLink="/create-post">Create Now!</span></p>
+            </div>
+        }@else{
+
+        }
         @for(post of userPosts;track $index){
             <app-user-posts [post]="post"/>
         }

@@ -3,11 +3,12 @@ import { AiTemplateComponent } from './ai-template/ai-template.component';
 import { AiTemplateBelowComponent } from './ai-template-below/ai-template-below.component';
 import { Post } from '../../types/post/post';
 import { PostService } from '../../services/post/post.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-artificial',
   standalone: true,
-  imports: [AiTemplateComponent,AiTemplateBelowComponent],
+  imports: [AiTemplateComponent,AiTemplateBelowComponent,RouterLink],
   templateUrl: './artificial.component.html',
   styleUrl: './artificial.component.scss'
 })
